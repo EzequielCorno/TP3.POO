@@ -8,7 +8,7 @@ public class Soldado extends Unidad {
 	private final static int ATAQUE_BASE = 10;
 	private final static int DISTANCIA_MAXIMA = 0;
 	private final static int DISTANCIA_MINIMA = 0;
-	private final static int ENERGIA_POR_ATAQUE = 10;; // Cuanto le consume cada ataque
+	private final static int ENERGIA_POR_ATAQUE = 10;; // CUANTO LE CONSUME CADA ATAQUE
 
 	public Soldado(Punto posicion) {
 		super(posicion);
@@ -28,8 +28,7 @@ public class Soldado extends Unidad {
 
 	@Override
 	protected boolean puedeRealizarAtaque() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.energia >= 10;
 	}
 
 	@Override

@@ -1,13 +1,27 @@
 package juego;
 
+/**
+ * La clase abstracta Unidad engloba las características comunes a todas las
+ * unidades. <br>
+ */
+
 public abstract class Unidad {
 
 	protected final static int CANT_MAX_ITEM = 3;
 
+	/**
+	 * Ataque inicial de la unidad.
+	 */
 	protected int ataque;
 
+	/**
+	 * Salud inicial de la unidad.
+	 */
 	protected int salud;
 
+	/**
+	 * Energia inicial de la unidad.
+	 */
 	protected int energia;
 
 	protected int energiaMaxima;
