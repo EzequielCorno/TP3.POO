@@ -28,7 +28,7 @@ public class Lancero extends Unidad{
 	@Override
 	protected boolean puedeRealizarAtaque() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override

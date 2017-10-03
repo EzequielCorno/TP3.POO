@@ -20,8 +20,6 @@ public abstract class Unidad {
 	
 	protected double defensa;
 	
-	protected int caballoRebelde;
-	
 	protected int energiaPorAtaque;
 
 	protected Punto posicion;

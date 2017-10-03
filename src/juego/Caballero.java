@@ -8,7 +8,7 @@ public class Caballero extends Unidad {
 	private final static int ATAQUE_BASE = 50;
 	private final static int DISTANCIA_MAXIMA = 1;
 	private final static int DISTANCIA_MINIMA = 2;
-	private final static int CABALLO_REBELDE = 0; // si llega a 3 esta rebelde
+	private boolean caballoRebelde; //------------- SI LLEGA A 3 ESTA REBELDE
 
 	public Caballero(Punto posicion) {
 		super(posicion);
@@ -18,25 +18,24 @@ public class Caballero extends Unidad {
 		this.ataque = ATAQUE_BASE;
 		this.distanciaMinima = DISTANCIA_MINIMA;
 		this.distanciaMaxima = DISTANCIA_MAXIMA;
-		this.caballoRebelde = CABALLO_REBELDE;
+		this.caballoRebelde = false;
 
 	}
 
 	@Override
 	protected void consumirAgua() {
-		caballoRebelde = 0;
+		if (!this.estaMuerto())
+			caballoRebelde = false;
 	}
 
 	@Override
 	protected boolean puedeRealizarAtaque() {
-		// TODO Auto-generated method stub
-		return false;
+		return !this.caballoRebelde;
 	}
 
 	@Override
 	protected void realizarAtaque() {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override

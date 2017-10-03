@@ -29,8 +29,7 @@ public class Arquero extends Unidad {
 
 	@Override
 	protected boolean puedeRealizarAtaque() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.cantidadDeFlechas > 0;
 	}
 
 	@Override
@@ -42,6 +41,12 @@ public class Arquero extends Unidad {
 	protected void fueAtacado(int daño) {
 		// TODO Auto-generated method stub
 
+	}
+	
+	public void recibirPaquete(){
+		if(!this.estaMuerto())
+			if(this.cantidadDeFlechas + 6 <= 20)
+				 this.cantidadDeFlechas += 6;
 	}
 
 }
