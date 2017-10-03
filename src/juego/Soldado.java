@@ -1,30 +1,29 @@
 package juego;
 
-public class Soldado extends Unidad{
+public class Soldado extends Unidad {
 
-	private int energia_base;
-	private int defensa_base;
-	private int salud_base;
-	private int ataque_base;
-	private int distancia_maxima;
-	private int distancia_minima;
-	private int energia_por_ataque; //Cuanto le consume cada ataque
-	
+	private final static int ENERGIA_BASE = 100;
+	private final static int DEFENSA_BASE = 3;
+	private final static int SALUD_BASE = 200;
+	private final static int ATAQUE_BASE = 10;
+	private final static int DISTANCIA_MAXIMA = 0;
+	private final static int DISTANCIA_MINIMA = 0;
+	private final static int ENERGIA_POR_ATAQUE = 10;; // Cuanto le consume cada ataque
+
 	public Soldado(Punto posicion) {
 		super(posicion);
-		energia_base = 100 ;
-		defensa_base = 3;
-		salud_base = 200;
-		ataque_base = 10;
-		distancia_minima = 0;
-		distancia_maxima = 0;
-		energia_por_ataque = 10;
+		this.energia = ENERGIA_BASE;
+		this.defensa = DEFENSA_BASE;
+		this.salud = SALUD_BASE;
+		this.ataque = ATAQUE_BASE;
+		this.distanciaMinima = DISTANCIA_MINIMA;
+		this.distanciaMaxima = DISTANCIA_MAXIMA;
+		this.energiaPorAtaque = ENERGIA_POR_ATAQUE;
 	}
-	
+
 	@Override
 	protected void consumirAgua() {
-		// TODO Auto-generated method stub
-		
+		energia = 100;
 	}
 
 	@Override
@@ -36,13 +35,13 @@ public class Soldado extends Unidad{
 	@Override
 	protected void realizarAtaque() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	protected void fueAtacado(int daño) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

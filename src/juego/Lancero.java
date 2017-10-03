@@ -2,21 +2,21 @@ package juego;
 
 public class Lancero extends Unidad{
 
-	private int energia_base;
-	private int defensa_base;
-	private int salud_base;
-	private int ataque_base;
-	private int distancia_maxima;
-	private int distancia_minima;
+	private final static int ENERGIA_BASE = 0;
+	private final static int DEFENSA_BASE = 2;
+	private final static int SALUD_BASE = 150;
+	private final static int ATAQUE_BASE = 25;
+	private final static int DISTANCIA_MAXIMA = 1;
+	private final static int DISTANCIA_MINIMA = 3;
 	
 	public Lancero(Punto posicion) {
 		super(posicion);
-		energia_base = 0 ;
-		defensa_base = 2;
-		salud_base = 150;
-		ataque_base = 25;
-		distancia_minima = 1;
-		distancia_maxima = 3;
+		this.energia = ENERGIA_BASE;
+		this.defensa = DEFENSA_BASE;
+		this.salud = SALUD_BASE;
+		this.ataque = ATAQUE_BASE;
+		this.distanciaMinima = DISTANCIA_MINIMA;
+		this.distanciaMaxima = DISTANCIA_MAXIMA;
 	}
 	
 	@Override

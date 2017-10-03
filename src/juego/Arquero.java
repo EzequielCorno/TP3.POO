@@ -1,30 +1,30 @@
 package juego;
 
-public class Arquero extends Unidad{
-	
-	private int energia_base;
-	private int defensa_base;
-	private int salud_base;
-	private int ataque_base;
-	private int distancia_maxima;
-	private int distancia_minima;
-	private int cantidad_flechas;
-	
+public class Arquero extends Unidad {
+
+	private final static int ENERGIA_BASE = 0;
+	private final static int DEFENSA_BASE = 1;
+	private final static int SALUD_BASE = 50;
+	private final static int ATAQUE_BASE = 5;
+	private final static int DISTANCIA_MAXIMA = 5;
+	private final static int DISTANCIA_MINIMA = 2;
+	private final static int CANTIDAD_DE_FLECHAS = 20;
+
 	public Arquero(Punto posicion) {
 		super(posicion);
-		energia_base = 0 ;
-		defensa_base = 1;
-		salud_base = 50;
-		ataque_base = 5;
-		distancia_minima = 2;
-		distancia_maxima = 5;
-		cantidad_flechas = 20;
+		this.energia = ENERGIA_BASE;
+		this.defensa = DEFENSA_BASE;
+		this.salud = SALUD_BASE;
+		this.ataque = ATAQUE_BASE;
+		this.distanciaMinima = DISTANCIA_MINIMA;
+		this.distanciaMaxima = DISTANCIA_MAXIMA;
+		this.cantidadDeFlechas = CANTIDAD_DE_FLECHAS;
 	}
 
 	@Override
 	protected void consumirAgua() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -35,14 +35,13 @@ public class Arquero extends Unidad{
 
 	@Override
 	protected void realizarAtaque() {
-		// TODO Auto-generated method stub
-		
+		this.cantidadDeFlechas--;
 	}
 
 	@Override
 	protected void fueAtacado(int daño) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

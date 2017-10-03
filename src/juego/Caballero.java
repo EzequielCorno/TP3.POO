@@ -1,31 +1,30 @@
 package juego;
 
-public class Caballero extends Unidad{
+public class Caballero extends Unidad {
 
-	private int energia_base;
-	private int defensa_base;
-	private int salud_base;
-	private int ataque_base;
-	private int distancia_maxima;
-	private int distancia_minima;
-	private int caballoRebelde; //si llega a 3 esta rebelde
-	
+	private final static int ENERGIA_BASE = 0;
+	private final static int DEFENSA_BASE = 4;
+	private final static int SALUD_BASE = 200;
+	private final static int ATAQUE_BASE = 50;
+	private final static int DISTANCIA_MAXIMA = 1;
+	private final static int DISTANCIA_MINIMA = 2;
+	private final static int CABALLO_REBELDE = 0; // si llega a 3 esta rebelde
+
 	public Caballero(Punto posicion) {
 		super(posicion);
-		energia_base = 0 ;
-		defensa_base = 4;
-		salud_base = 200;
-		ataque_base = 50;
-		distancia_minima = 1;
-		distancia_maxima = 2;
-		caballoRebelde = 0;
-		
+		this.energia = ENERGIA_BASE;
+		this.defensa = DEFENSA_BASE;
+		this.salud = SALUD_BASE;
+		this.ataque = ATAQUE_BASE;
+		this.distanciaMinima = DISTANCIA_MINIMA;
+		this.distanciaMaxima = DISTANCIA_MAXIMA;
+		this.caballoRebelde = CABALLO_REBELDE;
+
 	}
-	
+
 	@Override
 	protected void consumirAgua() {
-		// TODO Auto-generated method stub
-		
+		caballoRebelde = 0;
 	}
 
 	@Override
@@ -37,13 +36,13 @@ public class Caballero extends Unidad{
 	@Override
 	protected void realizarAtaque() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	protected void fueAtacado(int daño) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
