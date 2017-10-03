@@ -50,6 +50,7 @@ public abstract class Unidad {
 		if(this.puedeAtacar(obj)){
 			this.realizarAtaque();
 			obj.fueAtacado(this.ataque);
+			//obj.fueAtacado(this.ataque - this.ataque*getCapa())
 			return true;
 		}
 		
