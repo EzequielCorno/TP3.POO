@@ -1,5 +1,9 @@
 package juego;
 
+import java.util.ArrayList;
+
+import Decorator.DecoratorItem;
+
 public abstract class Unidad {
 
 	protected final static int CANT_MAX_ITEM = 3;
@@ -20,11 +24,9 @@ public abstract class Unidad {
 	
 	protected double defensa;
 	
-	protected int energiaPorAtaque;
-
 	protected Punto posicion;
 
-	// protected ArrayList<Item> items;
+	protected ArrayList<DecoratorItem> items;
 
 	public Unidad(Punto posicion) {
 		this.posicion = posicion;

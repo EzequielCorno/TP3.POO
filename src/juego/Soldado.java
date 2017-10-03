@@ -18,7 +18,6 @@ public class Soldado extends Unidad {
 		this.ataque = ATAQUE_BASE;
 		this.distanciaMinima = DISTANCIA_MINIMA;
 		this.distanciaMaxima = DISTANCIA_MAXIMA;
-		this.energiaPorAtaque = ENERGIA_POR_ATAQUE;
 	}
 
 	@Override
@@ -34,14 +33,13 @@ public class Soldado extends Unidad {
 
 	@Override
 	protected void realizarAtaque() {
-		// TODO Auto-generated method stub
+		this.energia -= ENERGIA_POR_ATAQUE;
 
 	}
 
 	@Override
 	protected void fueAtacado(int daño) {
-		// TODO Auto-generated method stub
-
+		this.salud -= (daño - this.defensa);
 	}
 
 }

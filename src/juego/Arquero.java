@@ -39,8 +39,7 @@ public class Arquero extends Unidad {
 
 	@Override
 	protected void fueAtacado(int daño) {
-		// TODO Auto-generated method stub
-
+		this.salud -= (daño - this.defensa);
 	}
 	
 	public void recibirPaquete(){

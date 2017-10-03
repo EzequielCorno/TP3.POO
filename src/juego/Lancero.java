@@ -39,8 +39,7 @@ public class Lancero extends Unidad{
 
 	@Override
 	protected void fueAtacado(int daño) {
-		// TODO Auto-generated method stub
-		
+		this.salud -= (daño - this.defensa);		
 	}
 
 }
