@@ -20,25 +20,25 @@ public class Lancero extends Unidad{
 	}
 	
 	@Override
-	protected void consumirAgua() {
+	public void consumirAgua() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	protected boolean puedeRealizarAtaque() {
+	public boolean puedeRealizarAtaque() {
 		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
-	protected void realizarAtaque() {
+	public void realizarAtaque() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	protected void fueAtacado(int daño) {
+	public void fueAtacado(int daño) {
 		this.salud -= (daño - this.defensa);		
 	}
 

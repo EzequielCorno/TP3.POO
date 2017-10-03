@@ -23,23 +23,23 @@ public class Caballero extends Unidad {
 	}
 
 	@Override
-	protected void consumirAgua() {
+	public void consumirAgua() {
 		if (!this.estaMuerto())
 			caballo.consumirAgua();
 	}
 
 	@Override
-	protected boolean puedeRealizarAtaque() {
+	public boolean puedeRealizarAtaque() {
 		return this.caballo.getEstado().atacar() ;
 	}
 
 	@Override
-	protected void realizarAtaque() {
+	public void realizarAtaque() {
 		// TODO Auto-generated method stub
 	}
 
 	@Override
-	protected void fueAtacado(int daño) {
+	public void fueAtacado(int daño) {
 		this.salud -= (daño - this.defensa);
 	}
 

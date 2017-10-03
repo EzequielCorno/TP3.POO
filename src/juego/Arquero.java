@@ -22,23 +22,23 @@ public class Arquero extends Unidad {
 	}
 
 	@Override
-	protected void consumirAgua() {
+	public void consumirAgua() {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	protected boolean puedeRealizarAtaque() {
+	public boolean puedeRealizarAtaque() {
 		return this.cantidadDeFlechas > 0;
 	}
 
 	@Override
-	protected void realizarAtaque() {
+	public void realizarAtaque() {
 		this.cantidadDeFlechas--;
 	}
 
 	@Override
-	protected void fueAtacado(int daño) {
+	public void fueAtacado(int daño) {
 		this.salud -= (daño - this.defensa);
 	}
 	

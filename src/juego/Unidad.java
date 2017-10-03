@@ -54,8 +54,7 @@ public abstract class Unidad {
 		
 		double distancia = this.posicion.distanciaCon(obj.posicion);
 		
-		if(distancia >= this.distanciaMinima && distancia <= this.distanciaMaxima && 
-				this.puedeRealizarAtaque())
+		if(distancia >= this.distanciaMinima && distancia <= this.distanciaMaxima && this.puedeRealizarAtaque())
 			return true;
 		
 		return false;
@@ -76,7 +75,7 @@ public abstract class Unidad {
 
 	public boolean estaMuerto() {
 
-		return this.salud == 0;
+		return this.salud <= 0;
 
 	}
 
@@ -110,6 +109,22 @@ public abstract class Unidad {
 
 	public void setDefensa(int defensa) {
 		this.defensa = defensa;
+	}
+
+	public double getDistanciaMinima() {
+		return distanciaMinima;
+	}
+
+	public double getDistanciaMaxima() {
+		return distanciaMaxima;
+	}
+
+	public int getCantidadDeFlechas() {
+		return cantidadDeFlechas;
+	}
+
+	public Punto getPosicion() {
+		return posicion;
 	}
 
 	
