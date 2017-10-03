@@ -46,7 +46,6 @@ public class TestArquero {
 	public void evaluaSiEstaMuerto(){
 		while(a2.estaMuerto() == false){
 			a1.atacar(a2);
-			a1.consumirAgua();
 		}
 		Assert.assertEquals(true, a2.estaMuerto());
 	}

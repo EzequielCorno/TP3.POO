@@ -6,8 +6,8 @@ public class Lancero extends Unidad{
 	private final static int DEFENSA_BASE = 2;
 	private final static int SALUD_BASE = 150;
 	private final static int ATAQUE_BASE = 25;
-	private final static int DISTANCIA_MAXIMA = 1;
-	private final static int DISTANCIA_MINIMA = 3;
+	private final static int DISTANCIA_MAXIMA = 3;
+	private final static int DISTANCIA_MINIMA = 1;
 	
 	public Lancero(Punto posicion) {
 		super(posicion);
