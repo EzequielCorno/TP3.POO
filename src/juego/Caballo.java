@@ -13,6 +13,12 @@ public class Caballo {
 	}
 	
 	public void atacar(){
-		estado = estado.atacar();
+		estado = estado.fueAtacado();
 	}
+
+	public Estado getEstado() {
+		return estado;
+	}
+
+	
 }

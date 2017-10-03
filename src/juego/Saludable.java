@@ -14,10 +14,14 @@ public class Saludable extends Estado{
 	}
 
 	@Override
-	public Estado atacar() {
+	public Estado fueAtacado() {
 		if(++cantAtaques == 3)
 			return new Rebelde();
 		return this;
+	}
+	
+	public boolean atacar(){
+		return true;
 	}
 
 }

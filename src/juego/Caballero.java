@@ -30,7 +30,7 @@ public class Caballero extends Unidad {
 
 	@Override
 	protected boolean puedeRealizarAtaque() {
-		return !this.caballoRebelde;
+		return this.caballo.getEstado().atacar() ;
 	}
 
 	@Override
