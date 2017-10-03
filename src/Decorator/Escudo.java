@@ -1,5 +1,5 @@
 package Decorator;
 
-public class Escudo {
+public class Escudo extends DecoratorItem{
 
 }

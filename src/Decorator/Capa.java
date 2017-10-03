@@ -1,5 +1,5 @@
 package Decorator;
 
-public class Capa {
+public class Capa extends DecoratorItem{
 
 }
