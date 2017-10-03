@@ -6,8 +6,8 @@ public class Caballero extends Unidad {
 	private final static int DEFENSA_BASE = 4;
 	private final static int SALUD_BASE = 200;
 	private final static int ATAQUE_BASE = 50;
-	private final static int DISTANCIA_MAXIMA = 1;
-	private final static int DISTANCIA_MINIMA = 2;
+	private final static int DISTANCIA_MAXIMA = 2;
+	private final static int DISTANCIA_MINIMA = 1;
 	private Caballo caballo; //------------- SI LLEGA A 3 ESTA REBELDE
 
 	public Caballero(Punto posicion) {

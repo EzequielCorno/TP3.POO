@@ -30,7 +30,7 @@ public abstract class Unidad {
 	
 	protected int cantidadDeFlechas;
 	
-	protected double defensa;
+	protected int defensa;
 	
 	protected Punto posicion;
 
@@ -104,11 +104,11 @@ public abstract class Unidad {
 		this.energia = energia;
 	}
 
-	public double getDefensa() {
+	public int getDefensa() {
 		return defensa;
 	}
 
-	public void setDefensa(double defensa) {
+	public void setDefensa(int defensa) {
 		this.defensa = defensa;
 	}
 
