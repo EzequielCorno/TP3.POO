@@ -1,10 +1,7 @@
 package juego;
 
-
 import java.util.ArrayList;
-
 import Decorator.DecoratorItem;
-
 
 public abstract class Unidad {
 
@@ -43,15 +40,15 @@ public abstract class Unidad {
 		this.posicion = posicion;
 	}
 
-	protected abstract void consumirAgua();
+	public abstract void consumirAgua();
 
-	protected abstract boolean puedeRealizarAtaque();
+	public abstract boolean puedeRealizarAtaque();
 
-	protected abstract void realizarAtaque();
+	public abstract void realizarAtaque();
 
-	protected abstract void fueAtacado(int daño);
+	public abstract void fueAtacado(int daño);
 
-	protected boolean puedeAtacar(Unidad obj){
+	public boolean puedeAtacar(Unidad obj){
 		if(this.estaMuerto() || obj.estaMuerto())
 			return false;
 		
@@ -64,7 +61,7 @@ public abstract class Unidad {
 		return false;
 	}
 	
-	protected boolean atacar(Unidad obj){
+	public boolean atacar(Unidad obj){
 		
 		if(this.puedeAtacar(obj)){
 			this.realizarAtaque();
@@ -77,10 +74,43 @@ public abstract class Unidad {
 		
 	}
 
-	protected boolean estaMuerto() {
+	public boolean estaMuerto() {
 
 		return this.salud == 0;
 
 	}
 
+	public int getAtaque() {
+		return ataque;
+	}
+
+	public void setAtaque(int ataque) {
+		this.ataque = ataque;
+	}
+
+	public int getSalud() {
+		return salud;
+	}
+
+	public void setSalud(int salud) {
+		this.salud = salud;
+	}
+
+	public int getEnergia() {
+		return energia;
+	}
+
+	public void setEnergia(int energia) {
+		this.energia = energia;
+	}
+
+	public double getDefensa() {
+		return defensa;
+	}
+
+	public void setDefensa(double defensa) {
+		this.defensa = defensa;
+	}
+
+	
 }

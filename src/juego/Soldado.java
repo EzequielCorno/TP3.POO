@@ -21,23 +21,23 @@ public class Soldado extends Unidad {
 	}
 
 	@Override
-	protected void consumirAgua() {
+	public void consumirAgua() {
 		energia = 100;
 	}
 
 	@Override
-	protected boolean puedeRealizarAtaque() {
+	public boolean puedeRealizarAtaque() {
 		return this.energia >= 10;
 	}
 
 	@Override
-	protected void realizarAtaque() {
+	public void realizarAtaque() {
 		this.energia -= ENERGIA_POR_ATAQUE;
 
 	}
 
 	@Override
-	protected void fueAtacado(int daño) {
+	public void fueAtacado(int daño) {
 		this.salud -= (daño - this.defensa);
 	}
 
