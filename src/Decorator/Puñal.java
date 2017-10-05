@@ -1,23 +1,29 @@
 package Decorator;
 
 public class Puñal extends DecoratorItem{
-
+		private double bonusFuerza;
+		private int bonusDefensa;
+		private int bonusEnergia;
+		
+	public Puñal() {
+			bonusFuerza=3;
+			bonusDefensa=-3;
+			bonusEnergia=0;
+	}
+	
 	@Override
-	protected int getBonusFuerza() {
-		// TODO Auto-generated method stub
-		return 0;
+	public double getBonusFuerza() {
+		return bonusFuerza;
 	}
 
 	@Override
-	protected int getBonusDefensa() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getBonusDefensa() {
+		return bonusDefensa;
 	}
 
 	@Override
-	protected int getBonusEnergia() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getBonusEnergia() {
+		return bonusEnergia;
 	}
 
 }

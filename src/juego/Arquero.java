@@ -47,5 +47,7 @@ public class Arquero extends Unidad {
 			if(this.cantidadDeFlechas + 6 <= 20)
 				 this.cantidadDeFlechas += 6;
 	}
+	
+	
 
 }

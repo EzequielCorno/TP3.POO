@@ -8,20 +8,17 @@ public class Escudo extends DecoratorItem{
 	}
 
 	@Override
-	protected int getBonusFuerza() {
-		// TODO Auto-generated method stub
+	public double getBonusFuerza() {
 		return 0;
 	}
 
 	@Override
-	protected int getBonusDefensa() {
-		// TODO Auto-generated method stub
+	public int getBonusDefensa() {	
 		return 0;
 	}
 
 	@Override
-	protected int getBonusEnergia() {
-		// TODO Auto-generated method stub
+	public int getBonusEnergia() {
 		return 0;
 	}
 

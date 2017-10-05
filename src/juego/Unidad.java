@@ -34,7 +34,7 @@ public abstract class Unidad {
 	
 	protected Punto posicion;
 
-	protected ArrayList<DecoratorItem> items;
+	protected ArrayList<DecoratorItem> arrayItem;
 
 	public Unidad(Punto posicion) {
 		this.posicion = posicion;
@@ -125,6 +125,37 @@ public abstract class Unidad {
 
 	public Punto getPosicion() {
 		return posicion;
+	}
+	
+	public void equiparCapa(DecoratorItem obj) {
+		if(this.puedeEquiparItem(obj)) {
+			this.arrayItem.add(obj);
+			this.ataque -= ( this.ataque * obj.getBonusFuerza() );
+			this.energia *= obj.getBonusEnergia();
+		}
+	}
+	
+	public void equiparPuñal(DecoratorItem obj) {
+		if(this.puedeEquiparItem(obj)) {
+			this.arrayItem.add(obj);
+			this.ataque += obj.getBonusFuerza();
+			this.defensa += obj.getBonusDefensa();
+		}
+	}
+	
+	public void equiparEscudo(DecoratorItem obj) {
+		if(this.puedeEquiparItem(obj)){
+			this.arrayItem.add(obj);
+			
+		}
+	}
+	
+	private boolean puedeEquiparItem(DecoratorItem obj) {
+		for(DecoratorItem it : this.arrayItem) {
+		if(it.getClass() == obj.getClass())
+			return false;
+		}
+		return true;
 	}
 
 	

@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import Decorator.Capa;
 import juego.Arquero;
 import juego.Punto;
 
@@ -50,4 +51,10 @@ public class TestArquero {
 		Assert.assertEquals(true, a2.estaMuerto());
 	}
 
+	@Test
+	public void equipaBienUnaCapa() {
+		a1.equiparCapa(new Capa());
+		Assert.assertEquals(4.5, a1.getAtaque(), 0.1);
+		
+	}
 }

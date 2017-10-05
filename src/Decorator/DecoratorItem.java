@@ -3,11 +3,11 @@ package Decorator;
 
 public abstract class DecoratorItem {
 	
-	protected abstract int getBonusFuerza();
+	public abstract double getBonusFuerza();
 	
-	protected abstract int getBonusDefensa();
+	public abstract int getBonusDefensa();
 	
-	protected abstract int getBonusEnergia();
+	public abstract int getBonusEnergia();
 	
-
+	
 }
