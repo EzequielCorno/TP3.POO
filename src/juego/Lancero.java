@@ -38,7 +38,7 @@ public class Lancero extends Unidad{
 	}
 
 	@Override
-	public void fueAtacado(int daño) {
+	public void fueAtacado(double daño) {
 		this.salud -= (daño - this.defensa);		
 	}
 

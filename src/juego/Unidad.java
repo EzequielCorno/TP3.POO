@@ -1,7 +1,7 @@
 package juego;
 
 import java.util.ArrayList;
-import Decorator.DecoratorItem;
+import Decorator.UnidadEquipada;
 
 public abstract class Unidad {
 
@@ -10,19 +10,19 @@ public abstract class Unidad {
 	/**
 	 * Ataque inicial de la unidad.
 	 */
-	protected int ataque;
+	protected double ataque;
 
 	/**
 	 * Salud inicial de la unidad.
 	 */
-	protected int salud;
+	protected double salud;
 
 	/**
 	 * Energia inicial de la unidad.
 	 */
-	protected int energia;
+	protected double energia;
 
-	protected int energiaMaxima;
+	protected double energiaMaxima;
 
 	protected double distanciaMinima;
 
@@ -30,14 +30,25 @@ public abstract class Unidad {
 	
 	protected int cantidadDeFlechas;
 	
-	protected int defensa;
+	protected double defensa;
 	
 	protected Punto posicion;
 
-	protected ArrayList<DecoratorItem> arrayItem;
+	protected ArrayList<UnidadEquipada> arrayItem;
+
 
 	public Unidad(Punto posicion) {
 		this.posicion = posicion;
+	}
+	
+	public Unidad(Unidad unidad){
+		this.ataque = unidad.getAtaque();
+		this.defensa = unidad.getDefensa();
+		this.energia = unidad.getEnergia();
+		this.salud = unidad.getSalud();
+		this.distanciaMaxima = unidad.getDistanciaMaxima();
+		this.distanciaMinima = unidad.getDistanciaMinima();
+		this.posicion = unidad.getPosicion();
 	}
 
 	public abstract void consumirAgua();
@@ -46,7 +57,7 @@ public abstract class Unidad {
 
 	public abstract void realizarAtaque();
 
-	public abstract void fueAtacado(int daño);
+	public abstract void fueAtacado(double daño);
 
 	public boolean puedeAtacar(Unidad obj){
 		if(this.estaMuerto() || obj.estaMuerto())
@@ -79,35 +90,35 @@ public abstract class Unidad {
 
 	}
 
-	public int getAtaque() {
+	public double getAtaque() {
 		return ataque;
 	}
 
-	public void setAtaque(int ataque) {
+	public void setAtaque(double ataque) {
 		this.ataque = ataque;
 	}
 
-	public int getSalud() {
+	public double getSalud() {
 		return salud;
 	}
 
-	public void setSalud(int salud) {
+	public void setSalud(double salud) {
 		this.salud = salud;
 	}
 
-	public int getEnergia() {
+	public double getEnergia() {
 		return energia;
 	}
 
-	public void setEnergia(int energia) {
+	public void setEnergia(double energia) {
 		this.energia = energia;
 	}
 
-	public int getDefensa() {
+	public double getDefensa() {
 		return defensa;
 	}
 
-	public void setDefensa(int defensa) {
+	public void setDefensa(double defensa) {
 		this.defensa = defensa;
 	}
 
@@ -127,7 +138,7 @@ public abstract class Unidad {
 		return posicion;
 	}
 	
-	public void equiparCapa(DecoratorItem obj) {
+	/*public void equiparCapa(DecoratorItem obj) {
 		if(this.puedeEquiparItem(obj)) {
 			this.arrayItem.add(obj);
 			this.ataque -= ( this.ataque * obj.getBonusFuerza() );
@@ -157,6 +168,6 @@ public abstract class Unidad {
 		}
 		return true;
 	}
-
+*/
 	
 }

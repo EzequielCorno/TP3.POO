@@ -1,14 +1,18 @@
 package test;
 
 import static org.junit.Assert.*;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import Decorator.Capa;
+import Decorator.EquiparCapa;
+import Decorator.EquiparEscudo;
+import Decorator.EquiparPuñal;
+//import Decorator.Capa;
+import Decorator.UnidadEquipada;
 import juego.Arquero;
 import juego.Punto;
+import juego.Unidad;
 
 public class TestArquero {
 
@@ -53,8 +57,22 @@ public class TestArquero {
 
 	@Test
 	public void equipaBienUnaCapa() {
-		a1.equiparCapa(new Capa());
-		Assert.assertEquals(4.5, a1.getAtaque(), 0.1);
+		UnidadEquipada u1 = new EquiparCapa(a1);
+		Assert.assertEquals(4.5, u1.getAtaque(), 0.1);
 		
+	}
+	
+	@Test
+	public void equipaBienPuñal(){
+		UnidadEquipada u1 = new EquiparPuñal(a1);
+		Assert.assertEquals(8.0, u1.getAtaque(),0.1);		
+	}
+	
+	@Test
+	public void equipaBienEscudo(){
+		UnidadEquipada u1 = new EquiparEscudo(a1);
+		Assert.assertEquals(1.4, u1.getDefensa(),0.1);
+		a2.atacar(u1);
+		Assert.assertEquals(48, u1.getSalud(),0.1);
 	}
 }
