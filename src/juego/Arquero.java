@@ -39,7 +39,7 @@ public class Arquero extends Unidad {
 
 	@Override
 	public void fueAtacado(double daño) {
-		this.salud -= (daño - getDefensa());
+		this.salud -= (daño - defensa);
 	}
 	
 	public void recibirPaquete(){

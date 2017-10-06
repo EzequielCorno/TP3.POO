@@ -22,7 +22,7 @@ public class TestArquero {
 	@Before
 	public void setUp() throws Exception {
 		a1 = new Arquero(new Punto(1,1));
-		a2 = new Arquero(new Punto(3,3));
+		a2 = new Arquero(new Punto(2,3));
 	}
 
 	@Test
@@ -40,6 +40,7 @@ public class TestArquero {
 	@Test 
 	public void atacaBien(){
 		Assert.assertEquals(true, a1.atacar(a2));
+		Assert.assertEquals(46, a2.getSalud(),0.1);
 	}
 	
 	@Test
@@ -71,7 +72,6 @@ public class TestArquero {
 	@Test
 	public void equipaBienEscudo(){
 		UnidadEquipada u1 = new EquiparEscudo(a1);
-		Assert.assertEquals(1.4, u1.getDefensa(),0.1);
 		a2.atacar(u1);
 		Assert.assertEquals(48, u1.getSalud(),0.1);
 	}

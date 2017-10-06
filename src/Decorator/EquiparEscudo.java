@@ -8,11 +8,11 @@ public class EquiparEscudo extends UnidadEquipada{
 	
 	public EquiparEscudo(Unidad unidad) {
 		super(unidad);
-		this.bonusDefensa = 1.4;
+		this.bonusDefensa = 0.6;
 	}
 	
-	public double getDefensa(){
-		return super.defensa * bonusDefensa;
+	public void fueAtacado(double daño){
+		this.uni.fueAtacado(daño * bonusDefensa);
 	}
 
 }
