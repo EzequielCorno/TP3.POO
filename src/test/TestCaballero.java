@@ -52,4 +52,13 @@ public class TestCaballero {
 		}
 		Assert.assertEquals(true, c2.estaMuerto());
 	}
+	
+	@Test
+	public void SeLePoneCaballoRebelde(){
+		
+		c1.atacar(c2);
+		c1.atacar(c2);
+		c1.atacar(c2);
+		Assert.assertEquals(false, c1.atacar(c2));
+	}
 }

@@ -12,7 +12,6 @@ import Decorator.EquiparPuñal;
 import Decorator.UnidadEquipada;
 import juego.Arquero;
 import juego.Punto;
-import juego.Unidad;
 
 public class TestArquero {
 
@@ -73,6 +72,15 @@ public class TestArquero {
 	public void equipaBienEscudo(){
 		UnidadEquipada u1 = new EquiparEscudo(a1);
 		a2.atacar(u1);
-		Assert.assertEquals(48, u1.getSalud(),0.1);
+		Assert.assertEquals(49, u1.getSalud(),0.1);
 	}
+	
+	@Test 
+	public void atacarConPuñalaArqueroconEscudo(){
+		UnidadEquipada u1 = new EquiparEscudo(a1);
+		UnidadEquipada u2 = new EquiparPuñal(a2);
+		u2.atacar(u1);
+		Assert.assertEquals(47.8, u1.getSalud(),0.0001);  // 50 - 8*0.4 +1
+	}
+	
 }

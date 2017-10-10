@@ -1,11 +1,9 @@
 package juego;
 
-import java.util.ArrayList;
-import Decorator.UnidadEquipada;
-
 public abstract class Unidad {
 
-	protected final static int CANT_MAX_ITEM = 3;
+	protected final static double ENERGIA_MAXIMA = 100;
+
 
 	/**
 	 * Ataque inicial de la unidad.
@@ -33,10 +31,7 @@ public abstract class Unidad {
 	protected double defensa;
 	
 	protected Punto posicion;
-
-	protected ArrayList<UnidadEquipada> arrayItem;
-
-
+	
 	public Unidad(Punto posicion) {
 		this.posicion = posicion;
 	}
@@ -75,8 +70,7 @@ public abstract class Unidad {
 		
 		if(this.puedeAtacar(obj)){
 			this.realizarAtaque();
-			obj.fueAtacado(this.ataque);
-			//obj.fueAtacado(this.ataque - this.ataque*getCapa())
+			obj.fueAtacado(this.getAtaque());
 			return true;
 		}
 		
@@ -138,36 +132,8 @@ public abstract class Unidad {
 		return posicion;
 	}
 	
-	/*public void equiparCapa(DecoratorItem obj) {
-		if(this.puedeEquiparItem(obj)) {
-			this.arrayItem.add(obj);
-			this.ataque -= ( this.ataque * obj.getBonusFuerza() );
-			this.energia *= obj.getBonusEnergia();
-		}
+	public double getEnergiaMaxima() {
+		return ENERGIA_MAXIMA;
 	}
-	
-	public void equiparPuñal(DecoratorItem obj) {
-		if(this.puedeEquiparItem(obj)) {
-			this.arrayItem.add(obj);
-			this.ataque += obj.getBonusFuerza();
-			this.defensa += obj.getBonusDefensa();
-		}
-	}
-	
-	public void equiparEscudo(DecoratorItem obj) {
-		if(this.puedeEquiparItem(obj)){
-			this.arrayItem.add(obj);
-			
-		}
-	}
-	
-	private boolean puedeEquiparItem(DecoratorItem obj) {
-		for(DecoratorItem it : this.arrayItem) {
-		if(it.getClass() == obj.getClass())
-			return false;
-		}
-		return true;
-	}
-*/
 	
 }

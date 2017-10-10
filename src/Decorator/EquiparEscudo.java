@@ -4,15 +4,14 @@ import juego.Unidad;
 
 public class EquiparEscudo extends UnidadEquipada{
 
-	private double bonusDefensa;
+	private static double BONUS_DEFENSA = 0.4;
 	
 	public EquiparEscudo(Unidad unidad) {
 		super(unidad);
-		this.bonusDefensa = 0.6;
 	}
 	
 	public void fueAtacado(double daño){
-		this.uni.fueAtacado(daño * bonusDefensa);
+		this.uni.fueAtacado(daño * BONUS_DEFENSA);
 	}
 
 }

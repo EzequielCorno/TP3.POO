@@ -22,7 +22,7 @@ public class Soldado extends Unidad {
 
 	@Override
 	public void consumirAgua() {
-		energia = 100;
+		energia = getEnergiaMaxima();
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class Soldado extends Unidad {
 
 	@Override
 	public void realizarAtaque() {
-		this.energia -= ENERGIA_POR_ATAQUE;
+		this.energia = getEnergia() - ENERGIA_POR_ATAQUE;
 
 	}
 

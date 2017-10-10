@@ -2,23 +2,24 @@ package Decorator;
 
 import juego.Unidad;
 
-public class EquiparPuñal extends UnidadEquipada{
+public class EquiparPuñal extends UnidadEquipada {
 
-	private int bonusDefensa;
-	private int bonusAtaque;
-	
+	private static double BONUS_DEFENSA = 3;
+	private static double BONUS_ATAQUE = 3;
+
 	public EquiparPuñal(Unidad unidad) {
 		super(unidad);
-		this.bonusDefensa = 3;
-		this.bonusAtaque = 3;
 	}
-	
-	public double getDefensa(){
-		return (super.getDefensa() - bonusDefensa);
+
+	public double getDefensa() {
+		return (super.getDefensa() - BONUS_DEFENSA);
 	}
-	
-	public double getAtaque(){
-		return (super.getAtaque() + bonusAtaque);
+
+	public double getAtaque() {
+		return (super.getAtaque() + BONUS_ATAQUE);
 	}
-		
+
+	public void fueAtacado(double daño) {
+		this.uni.fueAtacado(daño + BONUS_DEFENSA);
+	}
 }
