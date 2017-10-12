@@ -35,7 +35,7 @@ public class Caballero extends Unidad {
 
 	@Override
 	public void realizarAtaque() {
-		// TODO Auto-generated method stub
+		this.caballo.realizarAtaqueConCaballo();
 	}
 
 	@Override

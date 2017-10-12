@@ -16,13 +16,13 @@ public class Rebelde extends Estado{
 	}
 
 	@Override
-	public Estado fueAtacado() {
-		return this;
+	public boolean atacar() {
+		return false;
 	}
 
 	@Override
-	public boolean atacar() {
-		return false;
+	public Estado realizarAtaqueConCaballo() {
+		return this;
 	}
 
 }

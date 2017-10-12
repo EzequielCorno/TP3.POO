@@ -20,7 +20,6 @@ public class TestCaballero {
 	public void setUp() throws Exception {
 		c1 = new Caballero(new Punto(1,1));
 		c2 = new Caballero(new Punto(2,2));
-		troya = new Caballo();
 	}
 
 	@Test
@@ -32,7 +31,6 @@ public class TestCaballero {
 		Assert.assertTrue(c1.getEnergia() == 0);
 		Assert.assertTrue(c1.getDistanciaMinima() == 1);
 		Assert.assertTrue(c1.getDistanciaMaxima() == 2);
-		///Assert.assertEquals(troya.getEstado(),);
 	}
 	
 	@Test 
@@ -49,16 +47,25 @@ public class TestCaballero {
 	public void evaluaSiEstaMuerto(){
 		while(c2.estaMuerto() == false){
 			c1.atacar(c2);
+			c1.consumirAgua();
 		}
 		Assert.assertEquals(true, c2.estaMuerto());
 	}
 	
 	@Test
 	public void SeLePoneCaballoRebelde(){
-		
 		c1.atacar(c2);
 		c1.atacar(c2);
 		c1.atacar(c2);
 		Assert.assertEquals(false, c1.atacar(c2));
+	}
+	
+	@Test
+	public void funcionaBienConsumirAgua(){
+		c1.atacar(c2);
+		c1.atacar(c2);
+		c1.atacar(c2);
+		c1.consumirAgua();
+		Assert.assertEquals(true, c1.atacar(c2));
 	}
 }

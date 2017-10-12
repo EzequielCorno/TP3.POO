@@ -12,16 +12,16 @@ public class Saludable extends Estado{
 	public Estado consumirAgua() {
 		return this;
 	}
-
-	@Override
-	public Estado fueAtacado() {
-		if(++cantAtaques == 3)
-			return new Rebelde();
-		return this;
-	}
 	
 	public boolean atacar(){
 		return true;
+	}
+
+	@Override
+	public Estado realizarAtaqueConCaballo() {
+		if(++cantAtaques == 3)
+			return new Rebelde();
+		return this;
 	}
 
 }

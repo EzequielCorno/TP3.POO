@@ -12,8 +12,8 @@ public class Caballo {
 		estado = estado.consumirAgua();
 	}
 	
-	public void atacar(){
-		estado = estado.fueAtacado();
+	public void realizarAtaqueConCaballo(){
+		estado = estado.realizarAtaqueConCaballo();
 	}
 
 	public Estado getEstado() {
