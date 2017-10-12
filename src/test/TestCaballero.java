@@ -68,4 +68,6 @@ public class TestCaballero {
 		c1.consumirAgua();
 		Assert.assertEquals(true, c1.atacar(c2));
 	}
+	
+	
 }
